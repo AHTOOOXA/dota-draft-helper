@@ -25,7 +25,6 @@ class Analayzer:
                  'troll-warlord', 'tusk', 'undying', 'vengeful-spirit', 'venomancer', 'visage', 'warlock', 'weaver',
                  'windranger', 'witch-doctor', 'wraith-king', 'zeus', 'arc-warden', 'underlord', 'oracle',
                  'monkey-king']
-    hero_list = ['pudge', 'axe', 'bloodseeker', 'jakiro', 'doom', 'invoker', 'broodmother', 'earthshaker']
 
     def __init__(self):
         self.hero_vs_hero_dict = dict()
@@ -70,10 +69,11 @@ class Analayzer:
         for hero in Analayzer.hero_list:
             if hero in d_heroes or hero in r_heroes:
                 continue
-            value = 1
+            value = 0.5
             for r_hero in r_heroes:
                 multiplyer = self.hero_vs_hero_dict[hero][r_hero]
-                value *= 50 - multiplyer
+                value *= (50 - multiplyer)/100
+                value *= 2
             dire_answer.append((value, hero))
         dire_answer.sort(reverse=True)
         t_dire_answer = 'Лучший выбор для dire:\n'
@@ -85,11 +85,12 @@ class Analayzer:
         for hero in Analayzer.hero_list:
             if hero in d_heroes or hero in r_heroes:
                 continue
-            value = 1
+            value = 0.5
             for d_hero in d_heroes:
                 multiplyer = self.hero_vs_hero_dict[hero][d_hero]
-                # print(f'mult for {hero} and {d_hero}', multiplyer)
-                value *= 50 - multiplyer
+                print(f'mult for {hero} and {d_hero}', multiplyer)
+                value *= (50 - multiplyer)/100
+                value *= 2
             radiant_answer.append((value, hero))
         radiant_answer.sort(reverse=True)
         t_radiant_answer = 'Лучший выбор для radiant:\n'
