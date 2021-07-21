@@ -71,8 +71,8 @@ class Analayzer:
                 continue
             value = 0.5
             for r_hero in r_heroes:
-                multiplyer = self.hero_vs_hero_dict[hero][r_hero]
-                value *= (50 - multiplyer)/100
+                multiplier = self.hero_vs_hero_dict[hero][r_hero]
+                value *= (50 - multiplier)/100
                 value *= 2
             dire_answer.append((value, hero))
         dire_answer.sort(reverse=True)
@@ -87,9 +87,8 @@ class Analayzer:
                 continue
             value = 0.5
             for d_hero in d_heroes:
-                multiplyer = self.hero_vs_hero_dict[hero][d_hero]
-                print(f'mult for {hero} and {d_hero}', multiplyer)
-                value *= (50 - multiplyer)/100
+                multiplier = self.hero_vs_hero_dict[hero][d_hero]
+                value *= (50 - multiplier)/100
                 value *= 2
             radiant_answer.append((value, hero))
         radiant_answer.sort(reverse=True)
