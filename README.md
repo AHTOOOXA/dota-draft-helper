@@ -1,6 +1,8 @@
 # dota-draft-helper
 
 ФИО: Сафонов Антон Евгеньевич
+
+
 Bot username: @dota_draft_helper_bot
 
 Dota Draft Helper это телеграмм-бот, который помогает выбрать лучшего персонажа против уже взятых, основываясь на статистике собранной на https://ru.dotabuff.com/
